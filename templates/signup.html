@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Sign Up</title>
+
+    <!-- Favicons -->
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/sign.css')}}">
+
+
+
+    <!-- Custom styles for this template -->
+</head>
+<body style="color: orange;">
+
+    
+
+<header>
+    <h2 class="logo">shop</h2>
+    <nav class="navigation">
+        <a href="/home">home</a>
+    <a href="/about">about</a>
+    <a href="#">serivices</a>
+    <a href="#">contact</a>
+    <a href="/login"> <button class="btnLogin-popup" action="">login</button></a>
+    <a href="/sign-up"><button class="btnLogin-popup">sign-up</button></a>
+    
+    </nav>
+    </header>
+    <div style="padding: 20px; text-align: center; color: orange">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <b>{{ message }}</b>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+<div class="wrapper" style="color: orange;">
+    <form method="post" action="/sign-up">
+        <div class="form-box login" style="color: orange;">
+        <h2 class="sign">Fill this form to register!</h2>
+        
+       
+        <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <input type="text" name="username"  placeholder="name@example.com">
+            <label>Username</label><br>
+        </div>
+        <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input type="email" name="email"  placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input type="password" name="password" placeholder="******">
+            <label >Password</label>
+        </div>
+
+        <button class="btn" type="submit">Submit</button>
+        <div class="login-register">
+            <p class="Create">Already have an account?<a class="register-link" href="/login">login</a> </p>
+        </div>
+        <p>&copy; 2023</p>
+    </form>
+</div>
+</div>
+
+
+</body>
+</html>

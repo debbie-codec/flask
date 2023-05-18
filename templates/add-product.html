@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add product</title>
+</head>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/flask-store.css')}}">
+<style>
+
+body{
+    margin: 0;
+    background: linear-gradient(to left bottom, lightblue, lightpink, lightblue );
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+}
+.container{
+    width: 20%;  
+  margin: 15px;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  padding-top: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) ;
+  transition: .4s;
+  background: aliceblue;
+  display: inline-block;
+}
+input{
+    width: 50%;
+}
+</style>
+<body>
+<div class="container">
+    <div class="center-div">
+        <h2>Add Product</h2>
+        <form method="post" action="/add-product">
+        <input type="text" name="title" class="form-control" placeholder="Enter title">
+            <br/>
+            <input type="number" name="price" class="form-control" placeholder="Enter price">
+            <br/>
+            <input type="text" name="category" class="form-control" placeholder="Enter category">
+            <br/>
+            <textarea name="description" class="form-control" rows="3">Enter product description.</textarea>
+            <br/>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
